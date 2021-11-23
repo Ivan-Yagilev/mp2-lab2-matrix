@@ -1,0 +1,3 @@
+D:/Cpp/mp2-lab2-matrix/cmake-build-debug/CMakeFiles/mp2_lab2_matrix.dir
+D:/Cpp/mp2-lab2-matrix/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Cpp/mp2-lab2-matrix/cmake-build-debug/CMakeFiles/rebuild_cache.dir
