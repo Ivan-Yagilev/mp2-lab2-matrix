@@ -10,7 +10,7 @@ add_executable(mp2_lab2_matrix
         gtest/gtest-all.cc
         gtest/gtest.h
         include/utmatrix.h
-        samples/sample_matrix.cpp
+#        samples/sample_matrix.cpp
         test/test_main.cpp
         test/test_tmatrix.cpp
         test/test_tvector.cpp)

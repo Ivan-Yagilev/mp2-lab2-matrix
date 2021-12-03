@@ -11,22 +11,96 @@
 
 int main()
 {
-  TMatrix<int> a(5), b(5), c(5);
-  int i, j;
+  cout << "Testing programs supporting the representation of triangular matrices" << endl;
+  int count_way;
+  int count;
+  int inf = 2;
+  int size;
 
-  setlocale(LC_ALL, "Russian");
-  cout << "Тестирование программ поддержки представления треугольных матриц"
-    << endl;
-  for (i = 0; i < 5; i++)
-    for (j = i; j < 5; j++ )
-    {
-      a[i][j] =  i * 10 + j;
-      b[i][j] = (i * 10 + j) * 100;
-    }
-  c = a + b;
-  cout << "Matrix a = " << endl << a << endl;
-  cout << "Matrix b = " << endl << b << endl;
-  cout << "Matrix c = a + b" << endl << c << endl;
+  while (inf != 1){
+      cout << "Enter the size of the matrix" << endl;
+      cin >> size;
+      TMatrix<int> a(size), b(size);
+      cout << "Choose a filling method" << endl;
+      cout << "1. Manually" << endl << "2. Random" << endl;
+      cin >> count_way;
+
+      switch (count_way) {
+          case 1:
+          {
+              cout << "Enter the matrix A" << endl;
+              cin >> a;
+              cout << "Enter the matrix B" << endl;
+              cin >> b;
+              cout << "A:" << endl << a << endl;
+              cout << "B:" << endl << b << endl;
+              break;
+          }
+          case 2:
+          {
+              for (int i = 0; i < size; ++i) {
+                  for (int k = i; k < size; ++k) {
+                      a[i][k] = rand()%1000;
+                      b[i][k] = rand()%1000;
+                  }
+              }
+              cout << "A:" << endl << a << endl;
+              cout << "B:" << endl << b << endl;
+              break;
+          }
+          default:
+          {
+              cout << "Unknown command" << endl;
+              cout << "1. Manually" << endl << "2. Random" << endl;
+              cin >> count_way;
+          }
+      }
+
+      cout << "Choose a math action" << endl;
+      cout << "1. Addition A + B" << endl << "2. Subtraction A - B" << endl;
+      cin >> count;
+
+      switch (count){
+          case 1:
+          {
+              cout << a + b << endl;
+              break;
+          }
+          case 2:
+          {
+              cout << a - b << endl;
+              break;
+          }
+          default:
+          {
+              cout << "Unknown command" << endl;
+              cout << "1. Addition A + B" << endl << "2. Subtraction A - B" << endl;
+              cin >> count;
+          }
+      }
+
+      cout << "1. Exit" << endl << "2. Resume" << endl;
+      cin >> inf;
+      switch (inf) {
+          case 1:
+          {
+              inf = 1;
+              break;
+          }
+          case 2:
+          {
+              inf = 2;
+              break;
+          }
+          default:
+          {
+              cout << "Unknown command" << endl;
+              cout << "1. Exit" << endl << "2. Resume" << endl;
+              cin >> inf;
+          }
+      }
+  }
+
   return 0;
 }
 //---------------------------------------------------------------------------
